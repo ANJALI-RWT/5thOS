@@ -1,0 +1,52 @@
+<!-- frontend/process.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Process Scheduling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="small">← Back</a>
+    <h1>Process Scheduling</h1>
+    <div class="panel">
+      <div id="inputs">
+        <div class="form-row">
+          <input type="text" id="pname" placeholder="Process Name (e.g., P1)">
+          <input type="number" id="burst" placeholder="Burst Time">
+          <input type="number" id="arrival" placeholder="Arrival Time" value="0">
+          <button class="btn" onclick="addProcess()">Add</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="small">Algorithm:</label>
+        <select id="algo">
+          <option value="FCFS">FCFS</option>
+          <option value="SJF">SJF (non-preemptive)</option>
+          <option value="RR">Round Robin</option>
+        </select>
+        <label class="small">Quantum (for RR):</label>
+        <input type="number" id="quantum" value="2" style="width:80px">
+        <button class="btn" onclick="run()">Run</button>
+        <button class="btn" onclick="clearAll()" style="background:#ff8a65">Clear</button>
+      </div>
+
+      <div id="proc-list" class="small"></div>
+    </div>
+
+    <div class="panel" id="result-panel" style="display:none">
+      <h3>Results</h3>
+      <div id="gantt" class="gantt"></div>
+      <table class="table" id="details-table">
+        <thead><tr><th>Process</th><th>Arrival</th><th>Burst</th><th>Start</th><th>End</th><th>Waiting</th><th>Turnaround</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="small" id="averages"></p>
+    </div>
+  </div>
+
+  <script src="process.js"></script>
+</body>
+</html>

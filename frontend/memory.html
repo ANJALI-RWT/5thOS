@@ -1,0 +1,34 @@
+<!-- frontend/memory.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Memory Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="small">← Back</a>
+    <h1>Memory Management (Page Replacement)</h1>
+    <div class="panel">
+      <p class="small">Enter pages sequence (comma) and number of frames.</p>
+      <div class="form-row">
+        <input type="text" id="pages" placeholder="e.g., 1,2,3,2,1,4,3">
+        <input type="number" id="frames" value="3" style="width:80px">
+        <select id="memalgo">
+          <option value="FIFO">FIFO</option>
+          <option value="LRU">LRU</option>
+        </select>
+        <button class="btn" onclick="runMemory()">Run</button>
+      </div>
+    </div>
+
+    <div class="panel" id="mem-result" style="display:none">
+      <h3>Result</h3>
+      <div id="mem-output" class="small"></div>
+    </div>
+  </div>
+
+  <script src="memory.js"></script>
+</body>
+</html>
