@@ -1,0 +1,39 @@
+<!-- frontend/disk.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Disk Scheduling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="small">← Back</a>
+    <h1>Disk Scheduling</h1>
+    <div class="panel">
+      <p class="small">Enter request sequence (comma) and starting head.</p>
+      <div class="form-row">
+        <input type="text" id="requests" placeholder="e.g., 95,180,34,119,11">
+        <input type="number" id="head" placeholder="head" value="50" style="width:80px">
+        <select id="diskalgo">
+          <option value="FCFS">FCFS</option>
+          <option value="SSTF">SSTF</option>
+          <option value="SCAN">SCAN</option>
+        </select>
+        <select id="dir">
+          <option value="up">Up</option>
+          <option value="down">Down</option>
+        </select>
+        <button class="btn" onclick="runDisk()">Run</button>
+      </div>
+    </div>
+
+    <div class="panel" id="disk-result" style="display:none">
+      <h3>Result</h3>
+      <div id="disk-output" class="small"></div>
+    </div>
+  </div>
+
+  <script src="disk.js"></script>
+</body>
+</html>

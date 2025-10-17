@@ -1,0 +1,40 @@
+<!-- frontend/deadlock.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Deadlock Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="small">← Back</a>
+    <h1>Deadlock Detection (Banker's Algorithm)</h1>
+    <div class="panel">
+      <p class="small">Enter allocation matrix, maximum need matrix and available resources (comma-separated rows).</p>
+      <div class="form-row">
+        <label class="small">Allocation (rows e.g. "0,1,0; 2,0,0"):</label>
+        <input type="text" id="allocation" placeholder="e.g., 0,1,0;2,0,0">
+      </div>
+      <div class="form-row">
+        <label class="small">Max Need (rows):</label>
+        <input type="text" id="maxneed" placeholder="e.g., 7,5,3;3,2,2">
+      </div>
+      <div class="form-row">
+        <label class="small">Available (comma):</label>
+        <input type="text" id="available" placeholder="e.g., 3,3,2">
+      </div>
+      <div class="form-row">
+        <button class="btn" onclick="runDeadlock()">Run Banker</button>
+      </div>
+    </div>
+
+    <div class="panel" id="dead-result" style="display:none">
+      <h3>Result</h3>
+      <div id="dead-output" class="small"></div>
+    </div>
+  </div>
+
+  <script src="deadlock.js"></script>
+</body>
+</html>
